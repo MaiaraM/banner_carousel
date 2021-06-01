@@ -1,6 +1,6 @@
 class BannerModel {
-  final String path;
+  final String pathImage;
   final String id;
 
-  BannerModel({required this.path, required this.id});
+  BannerModel({required this.pathImage, required this.id});
 }

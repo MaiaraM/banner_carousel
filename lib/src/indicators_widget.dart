@@ -8,7 +8,7 @@ class CarouselIndicatorWidget extends StatelessWidget {
   final bool animation;
   final Color color;
   final double dotBorderRadius;
-  final TypeIndicator sizeIndicator;
+  final IndicatorModel sizeIndicator;
 
   const CarouselIndicatorWidget({
     Key? key,

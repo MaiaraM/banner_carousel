@@ -1,40 +1,40 @@
-class TypeIndicator {
+class IndicatorModel {
   final double _width;
-  final double _widthExpanded;
+  final double _widthAnimation;
   final double _height;
-  final double _heightExpanded;
+  final double _heightAnimation;
   final double _padding;
-  final double _paddingExpanded;
+  final double _paddingAnimation;
 
-  const TypeIndicator({
+  const IndicatorModel({
     required double width,
     required double height,
-    required double padding,
+    required double spaceBetween,
   })   : _height = height,
         _width = width,
-        _widthExpanded = width,
-        _heightExpanded = height,
-        _paddingExpanded = padding,
-        _padding = padding;
+        _widthAnimation = width,
+        _heightAnimation = height,
+        _paddingAnimation = spaceBetween,
+        _padding = spaceBetween;
 
-  const TypeIndicator.animation({
+  const IndicatorModel.animation({
     required double width,
-    double? widthExpanded,
+    double? widthAnimation,
     required double height,
-    double? heightExpanded,
+    double? heightAnimation,
     required double spaceBetween,
-    double? spaceBetweenExpanded,
+    double? spaceBetweenAnimation,
   })  : _height = height,
         _width = width,
-        _widthExpanded = widthExpanded ?? width + 20,
-        _heightExpanded = heightExpanded ?? height,
-        _paddingExpanded = spaceBetweenExpanded ?? spaceBetween + 3,
+        _widthAnimation = widthAnimation ?? width + 20,
+        _heightAnimation = heightAnimation ?? height,
+        _paddingAnimation = spaceBetweenAnimation ?? spaceBetween + 3,
         _padding = spaceBetween;
 
   double get width => _width;
-  double get widthExpanded => _widthExpanded;
+  double get widthExpanded => _widthAnimation;
   double get height => _height;
-  double get heightExpanded => _heightExpanded;
+  double get heightExpanded => _heightAnimation;
   double get padding => _padding;
-  double get paddingExpanded => _paddingExpanded;
+  double get paddingExpanded => _paddingAnimation;
 }

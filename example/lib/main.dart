@@ -51,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
           /// Carousel Customized
           BannersCarousel(
             banners: BannerImages.listBanners,
-            customizedIndicators: TypeIndicator.animation(
-                width: 20, height: 5, spaceBetween: 2, widthExpanded: 50),
+            customizedIndicators: IndicatorModel.animation(
+                width: 20, height: 5, spaceBetween: 2, widthAnimation: 50),
             height: 120,
             activeColor: Colors.amberAccent,
             disableColor: Colors.white,
@@ -127,9 +127,9 @@ class BannerImages {
       "https://images.pexels.com/photos/2635817/pexels-photo-2635817.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=1400";
 
   static List<BannerModel> listBanners = [
-    BannerModel(path: banner1, id: "1"),
-    BannerModel(path: banner2, id: "2"),
-    BannerModel(path: banner3, id: "3"),
-    BannerModel(path: banner4, id: "4"),
+    BannerModel(pathImage: banner1, id: "1"),
+    BannerModel(pathImage: banner2, id: "2"),
+    BannerModel(pathImage: banner3, id: "3"),
+    BannerModel(pathImage: banner4, id: "4"),
   ];
 }

@@ -18,7 +18,7 @@ class BannersCarousel extends StatefulWidget {
   final EdgeInsetsGeometry? margin;
   final Color? activeColor;
   final Color? disableColor;
-  final TypeIndicator customizedIndicators;
+  final IndicatorModel customizedIndicators;
   final ValueChanged<int>? onPageChanged;
   final Function(String id)? onTap;
   final List<Widget>? customizedBanners;
@@ -39,8 +39,8 @@ class BannersCarousel extends StatefulWidget {
     this.initialPage = 0,
     this.activeColor,
     this.animation = true,
-    this.customizedIndicators =
-        const TypeIndicator.animation(width: 10, height: 10, spaceBetween: 3.0),
+    this.customizedIndicators = const IndicatorModel.animation(
+        width: 10, height: 10, spaceBetween: 3.0),
     this.customizedBanners,
   })  : assert(banners != null || customizedBanners != null,
             'banners or customizedBanners need to be implemented'),
@@ -65,8 +65,8 @@ class BannersCarousel extends StatefulWidget {
     this.activeColor,
     this.animation = true,
     this.customizedBanners,
-    this.customizedIndicators =
-        const TypeIndicator.animation(width: 10, height: 10, spaceBetween: 3.0),
+    this.customizedIndicators = const IndicatorModel.animation(
+        width: 10, height: 10, spaceBetween: 3.0),
   })  : this.width = double.maxFinite,
         this.margin = EdgeInsets.zero,
         assert(banners != null || customizedBanners != null,
@@ -100,7 +100,7 @@ class _BannersCarouselState extends State<BannersCarousel> {
       widget.banners!
           .map((banner) => BannerWidget(
                 key: Key("Banner${banner.id}"),
-                imagePath: banner.path,
+                imagePath: banner.pathImage,
                 onTap: widget.onTap != null
                     ? () => widget.onTap!(banner.id)
                     : () => print("Double Tap Banner ${banner.id}"),
