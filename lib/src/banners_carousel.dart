@@ -1,6 +1,6 @@
-import 'package:banners_carousel_package/banners_carousel_package.dart';
 import 'package:flutter/material.dart';
 
+import 'banner_model.dart';
 import 'banner_widget.dart';
 import 'indicators_widget.dart';
 import 'type_indicator.dart';

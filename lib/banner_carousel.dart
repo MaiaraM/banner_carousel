@@ -1,4 +1,4 @@
-library banners_carousel_package;
+library banner_carousel;
 
 export 'src/banner_model.dart';
 export 'src/banners_carousel.dart';

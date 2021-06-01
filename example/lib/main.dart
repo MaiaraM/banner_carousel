@@ -1,4 +1,3 @@
-import 'package:banners_carousel_package/banners_carousel_package.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
