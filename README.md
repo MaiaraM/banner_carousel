@@ -2,7 +2,7 @@
 
 BannerCarousel is a custom widget that builds a FullScreen carousel or not, with animation on the indicators.
 
-![Custom Carousel](screenshots/Casousel_Custom.gif)
+<img src="screenshots/Casousel_Custom.gif" alt="drawing" width="350"/>
 
   - [Default](#Default)
   - [FullScreen](#FullScreen)
@@ -11,6 +11,8 @@ BannerCarousel is a custom widget that builds a FullScreen carousel or not, with
 
 
 ## Default:
+
+<img src="screenshots/Default.gif" alt="drawing" width="350"/>
 
 ```dart
     BannersCarousel.fullScreen(
