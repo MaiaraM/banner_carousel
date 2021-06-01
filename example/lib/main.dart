@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Banner Carousel'),
     );
   }
 }
@@ -36,20 +36,20 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           ///Base
-          BannersCarousel(
+          BannerCarousel(
             banners: BannerImages.listBanners,
             onTap: (id) => print(id),
           ),
 
           /// Carousel FullScreen
-          BannersCarousel.fullScreen(
+          BannerCarousel.fullScreen(
             banners: BannerImages.listBanners,
             height: 80,
             animation: false,
           ),
 
           /// Carousel Customized
-          BannersCarousel(
+          BannerCarousel(
             banners: BannerImages.listBanners,
             customizedIndicators: IndicatorModel.animation(
                 width: 20, height: 5, spaceBetween: 2, widthAnimation: 50),
@@ -60,11 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
             borderRadius: 10,
             onTap: (id) => print(id),
             width: 250,
-            indicationBottom: false,
+            indicatorBottom: false,
           ),
 
           /// Banner Customized Without Indicator
-          BannersCarousel(
+          BannerCarousel(
             animation: false,
             viewportFraction: 0.60,
             showIndicator: false,
@@ -127,9 +127,9 @@ class BannerImages {
       "https://images.pexels.com/photos/2635817/pexels-photo-2635817.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=1400";
 
   static List<BannerModel> listBanners = [
-    BannerModel(pathImage: banner1, id: "1"),
-    BannerModel(pathImage: banner2, id: "2"),
-    BannerModel(pathImage: banner3, id: "3"),
-    BannerModel(pathImage: banner4, id: "4"),
+    BannerModel(imagePath: banner1, id: "1"),
+    BannerModel(imagePath: banner2, id: "2"),
+    BannerModel(imagePath: banner3, id: "3"),
+    BannerModel(imagePath: banner4, id: "4"),
   ];
 }

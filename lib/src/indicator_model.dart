@@ -1,3 +1,4 @@
+/// The Indicator Measurement Model
 class IndicatorModel {
   final double _width;
   final double _widthAnimation;
@@ -6,6 +7,7 @@ class IndicatorModel {
   final double _padding;
   final double _paddingAnimation;
 
+  /// Used for non-animated indicators
   const IndicatorModel({
     required double width,
     required double height,
@@ -17,6 +19,14 @@ class IndicatorModel {
         _paddingAnimation = spaceBetween,
         _padding = spaceBetween;
 
+  /// Used for animated indicators
+  ///
+  /// ```dart
+  /// BannersCarousel(
+  ///     banners: BannerImages.listBanners,
+  ///     customizedIndicators: IndicatorModel.animation(width: 20, height: 5, spaceBetween: 2, widthAnimation: 50)),
+  /// ```
+  ///
   const IndicatorModel.animation({
     required double width,
     double? widthAnimation,

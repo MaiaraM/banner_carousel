@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'indicator_animated_widget.dart';
-import 'type_indicator.dart';
+import 'indicator_model.dart';
 
 class CarouselIndicatorWidget extends StatelessWidget {
   final bool active;

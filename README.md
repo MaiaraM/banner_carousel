@@ -18,7 +18,7 @@ BannerCarousel is a custom widget that builds a FullScreen carousel or not, with
 ## Parameters
   - `banners` - List of `BannerModel`
   - `animation` - boolean for indicator animation - Default `true`
-  - `indicationBottom` - indicator is below carousel - Default `true`
+  - `indicatorBottom` - indicator is below carousel - Default `true`
   - `showIndicator` - show indicator - Default `true`
   - `height` - Default double `150`
   - `initialPage`
@@ -81,7 +81,7 @@ BannersCarousel(
   animation: true,
   borderRadius: 10,
   width: 250,
-  indicationBottom: false,
+  indicatorBottom: false,
 ),
 ```
 
