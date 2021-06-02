@@ -53,7 +53,7 @@ List<BannerModel> listBanners = [
 <img src="https://github.com/MaiaraM/banner_carousel/blob/main/screenshots/default.gif?raw=true" alt="drawing" width="350"/>
 
 ```dart
-BannersCarousel(banners: listBanners)
+BannerCarousel(banners: listBanners)
 ```
 
 ### FullScreen:
@@ -61,7 +61,7 @@ BannersCarousel(banners: listBanners)
 <img src="https://github.com/MaiaraM/banner_carousel/blob/main/screenshots/fullscreen.gif?raw=true" alt="drawing" width="350"/>
 
 ```dart
- BannersCarousel.fullScreen(
+ BannerCarousel.fullScreen(
     banners: listBanners,
     animation: false,
  );
@@ -72,7 +72,7 @@ BannersCarousel(banners: listBanners)
 <img src="https://github.com/MaiaraM/banner_carousel/blob/main/screenshots/customcarousel.gif?raw=true" alt="drawing" width="350"/>
 
 ```dart
-BannersCarousel(
+BannerCarousel(
   banners: listBanners,
   customizedIndicators: IndicatorModel.animation(width: 20, height: 5, spaceBetween: 2, widthAnimation: 50),
   height: 120,
@@ -90,7 +90,7 @@ BannersCarousel(
 <img src="https://github.com/MaiaraM/banner_carousel/blob/main/screenshots/custombanner.gif?raw=true" alt="drawing" width="350"/>
 
 ```dart
-BannersCarousel(
+BannerCarousel(
    animation: false,
    viewportFraction: 0.60,
    showIndicator: false,
@@ -134,7 +134,7 @@ BannersCarousel(
 
 
 ```dart
-BannersCarousel(
+BannerCarousel(
   banners: listBanners,
   onTap: (id) => print(id),
 )
