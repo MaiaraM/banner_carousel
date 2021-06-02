@@ -27,7 +27,7 @@ BannerCarousel is a custom widget that builds a FullScreen carousel or not, with
   - `margin`
   - `activeColor`
   - `disableColor`
-  - `customizedIndicators` - Accepts a `` model
+  - `customizedIndicators` - Accepts a `IndicatorModel` model
   - `onPageChanged`
   - `onTap`
   - `customizedBanners` - List of `Widget`
@@ -74,7 +74,7 @@ BannersCarousel(banners: listBanners)
 ```dart
 BannersCarousel(
   banners: listBanners,
-  customizedIndicators: TypeIndicator.animation(width: 20, height: 5, spaceBetween: 2, widthAnimation: 50),
+  customizedIndicators: IndicatorModel.animation(width: 20, height: 5, spaceBetween: 2, widthAnimation: 50),
   height: 120,
   activeColor: Colors.amberAccent,
   disableColor: Colors.white,
