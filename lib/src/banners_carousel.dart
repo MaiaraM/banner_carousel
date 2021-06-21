@@ -88,6 +88,9 @@ class BannerCarousel extends StatefulWidget {
   ///When you need to create your own Widget banners
   final List<Widget>? customizedBanners;
 
+  /// Margin between the banner
+  final double spaceBetween;
+
   /// ```dart
   ///  BannersCarousel(banners: BannerImages.listBanners)
   /// ```
@@ -109,6 +112,7 @@ class BannerCarousel extends StatefulWidget {
     this.animation = true,
     this.customizedIndicators = _indicatorModel,
     this.customizedBanners,
+    this.spaceBetween = 0,
   })  : assert(banners != null || customizedBanners != null,
             'banners or customizedBanners need to be implemented'),
         assert(
@@ -138,6 +142,7 @@ class BannerCarousel extends StatefulWidget {
     this.customizedBanners,
     this.customizedIndicators = _indicatorModel,
   })  : this.width = double.maxFinite,
+        this.spaceBetween = 0.0,
         this.margin = EdgeInsets.zero,
         assert(banners != null || customizedBanners != null,
             'banners or customizedBanners need to be implemented'),
@@ -176,6 +181,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
           .map((banner) => BannerWidget(
                 key: Key("Banner${banner.id}"),
                 bannerModel: banner,
+                spaceBetween: widget.spaceBetween,
                 onTap: widget.onTap != null
                     ? () => widget.onTap!(banner.id)
                     : () => print("Double Tap Banner ${banner.id}"),

@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child: Image.network(BannerImages.banner2)),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.green,

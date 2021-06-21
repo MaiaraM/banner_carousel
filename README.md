@@ -9,7 +9,7 @@ BannerCarousel is a custom widget that builds a FullScreen carousel or not, with
 - [Examples](#Examples)
   - [Default](#Default)
   - [FullScreen](#FullScreen)
-  - [Custom Caroulsel](#Custom-carousel)
+  - [Custom Carousel](#Custom-carousel)
   - [Custom Banner](#Custom-carousel)
   - [OnTap Event](#Ontap-event)
 
@@ -31,6 +31,8 @@ BannerCarousel is a custom widget that builds a FullScreen carousel or not, with
   - `onPageChanged`
   - `onTap`
   - `customizedBanners` - List of `Widget`
+  - `spaceBetween` - Double 
+  
 
 ## Models
   - `BannerModel` 
@@ -67,7 +69,7 @@ BannerCarousel(banners: listBanners)
  );
 ```
 
-### Custom Carrousel:
+### Custom Carousel:
 
 <img src="https://github.com/MaiaraM/banner_carousel/blob/main/screenshots/customcarousel.gif?raw=true" alt="drawing" width="350"/>
 

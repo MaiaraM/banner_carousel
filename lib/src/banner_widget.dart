@@ -12,10 +12,13 @@ class BannerWidget extends StatelessWidget {
   /// The [_onTap] The Method when click on the Banner
   final VoidCallback _onTap;
 
+  final double spaceBetween;
+
   BannerWidget({
     Key? key,
     required BannerModel bannerModel,
     this.borderRadius = 5,
+    this.spaceBetween = 0,
     required VoidCallback onTap,
   })   : _bannerModel = bannerModel,
         _onTap = onTap,
@@ -34,6 +37,7 @@ class BannerWidget extends StatelessWidget {
     return GestureDetector(
       onTap: _onTap,
       child: Container(
+        margin: EdgeInsets.symmetric(horizontal: spaceBetween),
         decoration: BoxDecoration(
             image: DecorationImage(
               image: _getImage,
