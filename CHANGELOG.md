@@ -1,5 +1,7 @@
-## [1.2.0]  - 2021-06-28 #
-             
+## [1.2.1] - Update Readme.
+*  Correction of documentation.
+
+## [1.2.0]  - 2021-06-28 #          
 ### ADD
 * Addition of the `pageController` field.
 
