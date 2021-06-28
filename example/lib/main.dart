@@ -46,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
             banners: BannerImages.listBanners,
             height: 80,
             animation: false,
+            initialPage: 1,
+            // OR pageController: PageController(initialPage: 6),
           ),
 
           /// Carousel Customized

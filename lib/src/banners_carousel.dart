@@ -91,6 +91,9 @@ class BannerCarousel extends StatefulWidget {
   /// Margin between the banner
   final double spaceBetween;
 
+  /// Margin between the banner
+  final PageController? pageController;
+
   /// ```dart
   ///  BannersCarousel(banners: BannerImages.listBanners)
   /// ```
@@ -113,6 +116,7 @@ class BannerCarousel extends StatefulWidget {
     this.customizedIndicators = _indicatorModel,
     this.customizedBanners,
     this.spaceBetween = 0,
+    this.pageController,
   })  : assert(banners != null || customizedBanners != null,
             'banners or customizedBanners need to be implemented'),
         assert(
@@ -141,6 +145,7 @@ class BannerCarousel extends StatefulWidget {
     this.animation = true,
     this.customizedBanners,
     this.customizedIndicators = _indicatorModel,
+    this.pageController,
   })  : this.width = double.maxFinite,
         this.spaceBetween = 0.0,
         this.margin = EdgeInsets.zero,
@@ -217,9 +222,10 @@ class _BannerCarouselState extends State<BannerCarousel> {
             decoration: _boxDecoration,
             height: widget.height,
             child: PageView(
-              controller: PageController(
-                  initialPage: widget.initialPage,
-                  viewportFraction: widget.viewportFraction),
+              controller: widget.pageController ??
+                  PageController(
+                      initialPage: widget.initialPage,
+                      viewportFraction: widget.viewportFraction),
               onPageChanged: (index) => _onChangePage(index),
               children: _listBanners,
             ),
