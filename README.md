@@ -32,7 +32,7 @@ BannerCarousel is a custom widget that builds a FullScreen carousel or not, with
   - `onTap`
   - `customizedBanners` - List of `Widget`
   - `spaceBetween` - Double 
-  - `pageController` - Double 
+  - `pageController` - PageController 
 
 
 ## Models
