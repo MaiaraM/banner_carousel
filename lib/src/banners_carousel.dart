@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:banner_carousel/banner_carousel.dart';
 import 'package:flutter/material.dart';
 
@@ -91,6 +93,15 @@ class BannerCarousel extends StatefulWidget {
   /// Margin between the banner
   final double spaceBetween;
 
+  /// provide control to transition
+  final Stream? shouldTriggerChange;
+
+  /// curve for programmatic transition
+  final Curve? transitionCurve;
+
+  /// curve for programmatic transition
+  final Duration? transitionDuration;
+
   /// ```dart
   ///  BannersCarousel(banners: BannerImages.listBanners)
   /// ```
@@ -113,6 +124,9 @@ class BannerCarousel extends StatefulWidget {
     this.customizedIndicators = _indicatorModel,
     this.customizedBanners,
     this.spaceBetween = 0,
+    this.shouldTriggerChange,
+    this.transitionCurve,
+    this.transitionDuration,
   })  : assert(banners != null || customizedBanners != null,
             'banners or customizedBanners need to be implemented'),
         assert(
@@ -141,6 +155,9 @@ class BannerCarousel extends StatefulWidget {
     this.animation = true,
     this.customizedBanners,
     this.customizedIndicators = _indicatorModel,
+    this.shouldTriggerChange,
+    this.transitionCurve,
+    this.transitionDuration,
   })  : this.width = double.maxFinite,
         this.spaceBetween = 0.0,
         this.margin = EdgeInsets.zero,
@@ -158,11 +175,30 @@ class BannerCarousel extends StatefulWidget {
 
 class _BannerCarouselState extends State<BannerCarousel> {
   late int _page;
-
+  late StreamSubscription streamSubscription;
+  late PageController _controller;
   @override
   void initState() {
     _page = widget.initialPage;
+    _controller = PageController(
+        initialPage: widget.initialPage,
+        viewportFraction: widget.viewportFraction,
+        keepPage: false);
+    if (widget.shouldTriggerChange != null) {
+      streamSubscription =
+          widget.shouldTriggerChange!.listen((n) => changeCurrentPage(n));
+    }
     super.initState();
+  }
+
+  @override
+  didUpdateWidget(BannerCarousel old) {
+    super.didUpdateWidget(old);
+    if (widget.shouldTriggerChange != old.shouldTriggerChange) {
+      streamSubscription.cancel();
+      streamSubscription =
+          widget.shouldTriggerChange!.listen((n) => changeCurrentPage(n));
+    }
   }
 
   /// Shadow Banner
@@ -217,9 +253,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
             decoration: _boxDecoration,
             height: widget.height,
             child: PageView(
-              controller: PageController(
-                  initialPage: widget.initialPage,
-                  viewportFraction: widget.viewportFraction),
+              controller: _controller,
               onPageChanged: (index) => _onChangePage(index),
               children: _listBanners,
             ),
@@ -259,5 +293,17 @@ class _BannerCarouselState extends State<BannerCarousel> {
       widget.onPageChanged!(index);
     }
     setState(() => _page = index);
+  }
+
+  /// Method for changing current page
+  void changeCurrentPage(dynamic page) {
+    Curve curve = (widget.transitionCurve != null
+        ? widget.transitionCurve
+        : Curves.linear)!;
+    Duration duration = (widget.transitionDuration != null
+        ? widget.transitionDuration
+        : Duration(seconds: 1))!;
+    if (page.runtimeType == int && page >= 0 && page < _listBanners.length)
+      _controller.animateToPage(page, curve: curve, duration: duration);
   }
 }
